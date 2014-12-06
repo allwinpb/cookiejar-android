@@ -1,21 +1,139 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-</head>
-<body>
+    <title>Cookie Jar</title>
 
-<p><button class="help-btn">Help</button></p>
-<div class='header'><h1>Directory</h1></div>
-<div class='search-view'>
-    <input class='search-key' type="search" placeholder="Enter name"/>
-    <ul class='list employee-list'></ul>
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="ratchet/dist/css/ratchet.css" rel="stylesheet">
+    <link href="ratchet/dist/css/ratchet-theme-android.min.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="ratchet/dist/js/ratchet.js"></script>
+  </head>
+  <body>
+
+	<!-- Make sure all your bars are the first things in your <body> -->
+<!--	<header class="bar bar-nav">
+		<nav class="bar bar-tab">
+			<a class="tab-item" href="#summary">
+				<span class="icon icon-person"></span>
+				<span class="tab-label">Summary</span>
+			</a>
+			<a class="tab-item" href="#ongoing">
+				<span class="icon icon-star-filled"></span>
+				<span class="tab-label">Ongoing</span>
+			</a>
+			<a class="tab-item" href="#done">
+				<span class="icon icon-pages"></span>
+				<span class="tab-label">Done</span>
+			</a>
+			<a class="tab-item" href="#settings">
+				<span class="icon icon-gear"></span>
+				<span class="tab-label">Settings</span>
+			</a>
+		</nav>
+	</header>
+-->
+<div class="segmented-control">
+  <a class="control-item active" href="#item1mobile">
+    Thing one
+  </a>
+  <a class="control-item" href="#item2mobile">
+    Thing two
+  </a>
+  <a class="control-item" href="#item3mobile">
+    Thing three
+  </a>
 </div>
+<div class="card">
+  <span id="item1mobile" class="control-content active">Item 1</span>
+  <span id="item2mobile" class="control-content">Item 2</span>
+  <span id="item3mobile" class="control-content">Item 3</span>
+</div>
+<!--	<div id="ongoing" class="content">
+		<table style="width:100%">
+			<tr style="background-color:#aeada5; color:white; text-align:center">
+				<td style="padding:10px">ONGOING TASKS</td>
+				<td style="padding:10px">Due</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 1</td>
+				<td style="padding:10px; font-size:13px">12/07</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 2</td>
+				<td style="padding:10px; font-size:13px">12/09</td>
+			</tr>
+		</table>
+		<div class="bar bar-standard bar-footer">
+			<a class="icon icon-compose pull-right" href="#myModalexample"></a>
+		</div>
+		<div id="myModalexample" class="modal">
+			<header class="bar bar-nav" style="margin-top:50px">
+				<a class="icon icon-close pull-right" href="#myModalexample"></a>
+				<h1 class="title">New task</h1>
+			</header>
+			<div class="content" style="margin-top:100px">
+				<form class="content-padded">
+					<input type="text" placeholder="Task">
+					<textarea rows="1" placeholder="Due: DD-MM-YYYY"></textarea>
+					<textarea rows="5" placeholder="Descriptions"></textarea>
+					<textarea rows="1" placeholder="Penalty per day: $/day"></textarea>
+					<button class="btn btn-block">Submit Task</button>
+				</form>			
+			</div>
+		</div>
+	</div>
 
-<script src="lib/jquery.js"></script>
-<script src="js/services/memory/EmployeeService.js"></script>
-<script src="js/app.js"></script>
+	<div id="done" class="content">
+		<table style="width:100%">
+			<tr style="background-color:#aeada5; color:white; text-align:center">
+				<td style="padding:10px">COMPLETED TASKS</td>
+				<td style="padding:10px">DUE</td>
+				<td style="padding:10px">DONE</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 0</td>
+				<td style="padding:10px; font-size:13px">01 Dec</td>
+				<td style="padding:10px; font-size:13px">06 Dec</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 4</td>
+				<td style="padding:10px; font-size:13px">10 Dec</td>
+				<td style="padding:10px; font-size:13px">5 Dec</td>
+			</tr>
+		</table>
+	</div>
 
+	<div id="settings" class="content">
+		<p class="content-padded" style="text-align:center">Your Profile and Paypal details for your transactions</p>
+		<table style="width:100%; text-align:center">
+			<tr style="border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Name</td>
+				<td style="padding:10px; font-size:13px">xxxxxxxx</td>
+			</tr>
+			<tr style="border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Email</td>
+				<td style="padding:10px; font-size:13px">xxxxxxxx</td>
+			</tr>
+			<tr style="border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Address</td>
+				<td style="padding:10px; font-size:13px">xxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+			</tr>
+		</table>
+		<div class="bar bar-standard bar-footer-secondary">
+			<button class="btn btn-block" style="font-size:13px">SYNC YOUR PAYPAL ACCOUNT</button>
+		</div>
+	</div>
+-->
 </body>
 </html>
+
