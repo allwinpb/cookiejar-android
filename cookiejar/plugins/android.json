@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -113,6 +117,9 @@
             "PACKAGE_NAME": "com.hackatron.cookiejar"
         },
         "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.hackatron.cookiejar"
+        },
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.hackatron.cookiejar"
         }
     },

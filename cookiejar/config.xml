@@ -2,24 +2,12 @@
 <widget id="com.hackatron.cookiejar" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CookieJar</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Cookie Jar!
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        CookieJar Team
     </author>
     <content src="index.html" />
     <access origin="*" />
     <icon src="icon.png" platform="android" width="64" height="64" density="mdpi" />
-    <platform name="android">
-	    <!-- you can use any density that exists in the Android project -->
-	    <splash src="./splash.png" density="land-hdpi"/>
-	    <splash src="./splash.png" density="land-ldpi"/>
-	    <splash src="./splash.png" density="land-mdpi"/>
-	    <splash src="./splash.png" density="land-xhdpi"/>
-	    <splash src="./splash.png" density="port-hdpi"/>
-	    <splash src="./splash.png" density="port-ldpi"/>
-	    <splash src="./splash.png" density="port-mdpi"/>
-	    <splash src="./splash.png" density="port-xhdpi"/>
-	</platform>
-	<preference name="SplashScreenDelay" value="10000" />
 </widget>
