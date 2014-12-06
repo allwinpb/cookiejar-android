@@ -357,6 +357,30 @@ p {
   color: #777;
 }
 
+.table-heading {
+	background-color: #aeada5;
+	color: white;
+	text-align: center;
+}
+
+.table-entries {
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
+.table-heading-column {
+	padding:10px;
+}
+
+.table-entries-column {
+	padding:10px;
+	font-size:13px;
+}
+
+.cell-normal {
+	border: 1px solid #ddd;
+}
+
 .btn {
   position: relative;
   display: inline-block;
