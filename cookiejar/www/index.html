@@ -21,7 +21,7 @@
   <body>
 
 	<!-- Make sure all your bars are the first things in your <body> -->
-<!--	<header class="bar bar-nav">
+	<header class="bar bar-nav">
 		<nav class="bar bar-tab">
 			<a class="tab-item" href="#summary">
 				<span class="icon icon-person"></span>
@@ -41,8 +41,8 @@
 			</a>
 		</nav>
 	</header>
--->
-<div class="segmented-control">
+
+<!--<div class="segmented-control">
   <a class="control-item active" href="#item1mobile">
     Thing one
   </a>
@@ -55,10 +55,26 @@
 </div>
 <div class="card">
   <span id="item1mobile" class="control-content active">Item 1</span>
-  <span id="item2mobile" class="control-content">Item 2</span>
+  <span id="item2mobile" class="control-content" style="width:100%">
+		<table style="width:100%">
+			<tr style="background-color:#aeada5; color:white; text-align:center">
+				<td style="padding:10px">ONGOING TASKS</td>
+				<td style="padding:10px">Due</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 1</td>
+				<td style="padding:10px; font-size:13px">12/07</td>
+			</tr>
+			<tr style="text-align:center; border:1px solid #ddd">
+				<td style="padding:10px; font-size:13px">Task 2</td>
+				<td style="padding:10px; font-size:13px">12/09</td>
+			</tr>
+		</table>
+</span>
   <span id="item3mobile" class="control-content">Item 3</span>
 </div>
-<!--	<div id="ongoing" class="content">
+-->
+	<div class="content">
 		<table style="width:100%">
 			<tr style="background-color:#aeada5; color:white; text-align:center">
 				<td style="padding:10px">ONGOING TASKS</td>
@@ -92,7 +108,7 @@
 			</div>
 		</div>
 	</div>
-
+<!--
 	<div id="done" class="content">
 		<table style="width:100%">
 			<tr style="background-color:#aeada5; color:white; text-align:center">
