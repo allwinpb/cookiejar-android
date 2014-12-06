@@ -23,40 +23,57 @@
 	<!-- Make sure all your bars are the first things in your <body> -->
 	<header class="bar bar-nav">
 		<nav class="bar bar-tab">
-			<a class="tab-item" href="pages/index.html">
+			<a class="tab-item" href="index.html">
 				<span class="icon icon-person"></span>
 				<span class="tab-label">Summary</span>
 			</a>
-			<a class="tab-item" href="pages/ongoing.html">
+			<a class="tab-item" href="ongoing.html">
 				<span class="icon icon-star-filled"></span>
 				<span class="tab-label">Ongoing</span>
 			</a>
-			<a class="tab-item" href="pages/done.html">
+			<a class="tab-item" href="done.html">
 				<span class="icon icon-pages"></span>
 				<span class="tab-label">Done</span>
 			</a>
-			<a class="tab-item" href="pages/settings.html">
+			<a class="tab-item" href="settings.html">
 				<span class="icon icon-gear"></span>
 				<span class="tab-label">Settings</span>
 			</a>
 		</nav>
 	</header>
-
 	<div class="content">
 		<table style="width:100%">
 			<tr style="background-color:#aeada5; color:white; text-align:center">
-				<td style="padding:10px">CONTRIBUTIONS</td>
-				<td style="padding:10px">STATUS</td>
+				<td style="padding:10px">ONGOING TASKS</td>
+				<td style="padding:10px">Due</td>
 			</tr>
 			<tr style="text-align:center; border:1px solid #ddd">
-				<td style="padding:10px; font-size:13px">National Kidney Foundation</td>
-				<td style="padding:10px; font-size:13px">Processing: $15.70</td>
+				<td style="padding:10px; font-size:13px">Task 1</td>
+				<td style="padding:10px; font-size:13px">07 Dec</td>
 			</tr>
 			<tr style="text-align:center; border:1px solid #ddd">
-				<td style="padding:10px; font-size:13px">Renci Hospital</td>
-				<td style="padding:10px; font-size:13px">Processed on 1 Dec: $20.20</td>
+				<td style="padding:10px; font-size:13px">Task 2</td>
+				<td style="padding:10px; font-size:13px">09 Dec</td>
 			</tr>
 		</table>
+		<div class="bar bar-standard bar-footer">
+			<a class="icon icon-compose pull-right" href="#myModalexample"></a>
+		</div>
+		<div id="myModalexample" class="modal">
+			<header class="bar bar-nav" style="margin-top:50px">
+				<a class="icon icon-close pull-right" href="#myModalexample"></a>
+				<h1 class="title">New task</h1>
+			</header>
+			<div class="content" style="margin-top:100px">
+				<form class="content-padded">
+					<input type="text" placeholder="Task">
+					<textarea rows="1" placeholder="Due: DD-MM-YYYY"></textarea>
+					<textarea rows="5" placeholder="Descriptions"></textarea>
+					<textarea rows="1" placeholder="Penalty per day: $/day"></textarea>
+					<button class="btn btn-block">Submit Task</button>
+				</form>			
+			</div>
+		</div>
 	</div>
 </body>
 </html>
