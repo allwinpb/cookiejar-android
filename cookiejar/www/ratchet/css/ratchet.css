@@ -375,7 +375,10 @@ p {
 .table-entries-column {
 	padding:10px;
 	font-size:13px;
+}
 
+.cell-normal {
+	border: 1px solid #ddd;
 }
 
 .btn {
