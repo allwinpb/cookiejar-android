@@ -1,11 +1,11 @@
 Build instructions
 ------------------
 
-`npm install -g cordova`
-`cd cookiejar`
-`cordova platforms add android`
+`npm install -g cordova`    
+`cd cookiejar`    
+`cordova platforms add android`    
 
-Copy lib folder from [Paypal Android SDK](https://github.com/paypal/PayPal-Android-SDK) to cookiejar/platforms/lib
+Copy lib folder from [Paypal Android SDK](https://github.com/paypal/PayPal-Android-SDK) to cookiejar/platforms/lib    
 
-`cordova run --target=xxxxxx`
+`cordova run --target=xxxxxx`    
 
