@@ -9,3 +9,6 @@ Copy lib folder from [Paypal Android SDK](https://github.com/paypal/PayPal-Andro
 
 `cordova run --target=xxxxxx`    
 
+To check for the device target number run:
+`adb devices`
+
