@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Cookie Jar</title>
+<head>
+	<meta charset="utf-8">
+	<title>Cookie Jar</title>
 
-    <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<!-- Sets initial viewport load and disables zooming  -->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <!-- Include the compiled Ratchet CSS -->
-    <link href="../ratchet/css/ratchet.css" rel="stylesheet">
-    <link href="../ratchet/css/ratchet-theme-android.min.css" rel="stylesheet">
-
-    <!-- Include the compiled Ratchet JS -->
-   <script src="../ratchet/js/ratchet.js"></script> 
-  </head>
-  <body>
+	<!-- Include the compiled Ratchet CSS -->
+	<link href="ratchet/css/ratchet.css" rel="stylesheet">
+	<link href="ratchet/css/ratchet-theme-android.min.css" rel="stylesheet">
+</head>
+<body>
 
 	<!-- Make sure all your bars are the first things in your <body> -->
 	<header class="bar bar-nav">
 		<nav class="bar bar-tab">
 			<a class="tab-item" href="index.html">
 				<span class="icon icon-person"></span>
-				<span class="tab-label">Summary</span>
+				<span class="tab-label">Overview</span>
+			</a>
+			<a class="tab-item" href="overdue.html">
+				<span class="icon icon-star-filled"></span>
+				<span class="tab-label">Overdue</span>
 			</a>
 			<a class="tab-item" href="ongoing.html">
-				<span class="icon icon-star-filled"></span>
+				<span class="icon icon-forward"></span>
 				<span class="tab-label">Ongoing</span>
 			</a>
-			<a class="tab-item" href="done.html">
-				<span class="icon icon-pages"></span>
-				<span class="tab-label">Done</span>
+			<a class="tab-item" href="completed.html">
+				<span class="icon icon-check"></span>
+				<span class="tab-label">Completed</span>
 			</a>
 			<a class="tab-item" href="charities.html">
 				<span class="icon icon-home"></span>
 				<span class="tab-label">Charities</span>
 			</a>
-			<a class="tab-item" href="settings.html">
-				<span class="icon icon-gear"></span>
-				<span class="tab-label">Settings</span>
-			</a>
 		</nav>
 	</header>
-
 	<div class="content" style="text-align:center">
 		<table style="width:100%">
 			<tr class="table-heading">
-				<td class="table-heading-column">COMPLETED TASKS</td>
+				<td class="table-heading-column">ONGOING TASKS</td>
 				<td class="table-heading-column">Due</td>
-				<td class="table-heading-column">DONE</td>
 			</tr>
 			<tr class="table-entries">
 				<td>
@@ -60,7 +56,6 @@
 					</a>
 				</td>
 				<td class="table-entries-column">01 Dec</td>
-				<td class="table-entries-column">06 Dec</td>
 			</tr>
 			<tr class="table-entries">
 				<td>
@@ -68,8 +63,7 @@
 						Task 2
 					</a>
 				</td>
-				<td class="table-entries-column">10 Dec</td>
-				<td class="table-entries-column">05 Dec</td>
+				<td class="table-entries-column">08 Dec</td>
 			</tr>
 		</table>
 		<div class="bar bar-standard bar-footer">
@@ -84,7 +78,10 @@
 				<p class="content-padded">The task is due on 01 Dec</p>
 				<p class="content-padded">This tasks requires 10days to finish and it is very tedious</p>
 				<p class="content-padded">The penalty for this task is $1/day late</p>
-				<p class="content-padded">The tasks is completed on 06 Dec</p>
+			</div>
+			<div class="bar bar-standard bar-footer">
+				<a class="icon icon-check pull-left"></a>
+				<a class="icon icon-trash pull-right"></a>
 			</div>
 		</div>
 		<div id="task2" class="modal">
@@ -93,10 +90,23 @@
 				<h1 class="title">Task 2</h1>
 			</header>
 			<div class="content" style="text-align:left; margin-top:50px">
-				<p class="content-padded">The task is due on 10 Dec</p>
-				<p class="content-padded">This tasks requires 7days to finish and I think I can do it pretty quickly</p>
+				<p class="content-padded">The task is due on 03 Dec</p>
+				<p class="content-padded">This tasks requires 2days to finish and I think I can do it pretty quickly</p>
 				<p class="content-padded">The penalty for this task is $3/day late</p>
-				<p class="content-padded">The task is completed on 05 Dec</p>
+				<button class="btn btn-block">Choose this charity</button>
+			</div>
+			<div class="bar bar-standard bar-footer">
+				<a class="icon icon-check pull-left"></a>
+				<a class="icon icon-trash pull-right"></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
+	<script type="text/javascript" src="js/cookiejar.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script src="ratchet/js/ratchet.js"></script> 
 </body>
 </html>
 
