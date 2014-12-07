@@ -37,6 +37,9 @@ var app = {
   onDeviceReady: function() {
     console.log("Reached onDeviceReady")
     app.receivedEvent('deviceready');
+    client = new CookieJarClient()
+    client.onReceivingCompletedTasks(console.log)
+    client.onReceivingPendingTasks(console.log)
   },
   // Update DOM on a Received Event
   receivedEvent: function(id) {
@@ -57,7 +60,7 @@ var app = {
     console.log("payment success: " + JSON.stringify(payment, null, 4));
   },
   onAuthorizationCallback: function(authorization) {
-    console.log("authorization: " + JSON.stringify(authorization, null, 4));
+    window.localStorage.setItem("auth", JSON.stringify(authorization, null, 4))
   },
   createPayment: function() {
     // for simplicity use predefined amount
@@ -76,42 +79,19 @@ var app = {
     return config;
   },
   onPrepareRender: function() {
-    // buttons defined in index.html
-    //  <button id="buyNowBtn"> Buy Now !</button>
-    //  <button id="buyInFutureBtn"> Pay in Future !</button>
-    //  <button id="profileSharingBtn"> ProfileSharing !</button>
-    // var buyNowBtn = document.getElementById("buyNowBtn");
-    var buyInFutureBtn = document.getElementById("paypalfuture");
-    var profileSharingBtn = document.getElementById("paypalprofile");
-
-    // buyNowBtn.onclick = function(e) {
-    //   // single payment
-    //   PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment,
-    //     app.onUserCanceled);
-    // };
-
-    console.log("Buttons captured")
-    buyInFutureBtn.onclick = function(e) {
-      // future payment
+    if(window.localStorage.getItem("auth") === null){
       console.log("Future Payment Triggered")
+
       PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app
         .onUserCanceled);
-    };
-
-    profileSharingBtn.onclick = function(e) {
-      // profile sharing
-      console.log("Profile Sharing Triggered")
-      PayPalMobile.renderProfileSharingUI(["profile", "email", "phone",
-        "address", "futurepayments", "paypalattributes"
-      ], app.onAuthorizationCallback, app.onUserCanceled);
-    };
-    console.log("Button Events Setup")
+      console.log("Button Events Setup")
+    }
   },
   onPayPalMobileInit: function() {
     // must be called
     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
     console.log("Reached PayPalMobileInit")
-    PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(),
+    PayPalMobile.prepareToRender("PayPalEnvironmentNoNetwork", app.configuration(),
       app.onPrepareRender);
   },
   onUserCanceled: function(result) {
