@@ -46,25 +46,57 @@
 		</nav>
 	</header>
 
-	<div class="content">
+	<div class="content" style="text-align:center">
 		<table style="width:100%">
 			<tr class="table-heading">
 				<td class="table-heading-column">COMPLETED TASKS</td>
-				<td class="table-heading-column">DUE</td>
+				<td class="table-heading-column">Due</td>
 				<td class="table-heading-column">DONE</td>
 			</tr>
 			<tr class="table-entries">
-				<td class="table-entries-column">Task 0</td>
+				<td>
+					<a href="#task1" class="btn btn-block" style="background-color:inherit; margin:0px; font-size:13px">
+						Task 1
+					</a>
+				</td>
 				<td class="table-entries-column">01 Dec</td>
 				<td class="table-entries-column">06 Dec</td>
 			</tr>
 			<tr class="table-entries">
-				<td class="table-entries-column">Task 4</td>
+				<td>
+					<a href="#task2" class="btn btn-block" style="background-color:inherit; margin:0px; font-size:13px">
+						Task 2
+					</a>
+				</td>
 				<td class="table-entries-column">10 Dec</td>
-				<td class="table-entries-column">5 Dec</td>
+				<td class="table-entries-column">05 Dec</td>
 			</tr>
 		</table>
-	</div>
+		<div class="bar bar-standard bar-footer">
+			<p class="content-padded">Tap on the tasks to view more details of the task</p>
+		</div>
+		<div id="task1" class="modal">
+			<header class="bar bar-nav" style="margin-top:50px">
+				<a class="icon icon-close pull-right" href="#task1"></a>
+				<h1 class="title">Task 1</h1>
+			</header>
+			<div class="content" style="margin-top:50px">
+				<p class="content-padded">The task is due on 01 Dec</p>
+				<p class="content-padded">This tasks requires 10days to finish and it is very tedious</p>
+				<p class="content-padded">The penalty for this task is $1/day late</p>
+				<p class="content-padded">The tasks is completed on 06 Dec</p>
+			</div>
+		</div>
+		<div id="task2" class="modal">
+			<header class="bar bar-nav" style="margin-top:50px">
+				<a class="icon icon-close pull-right" href="#task2"></a>
+				<h1 class="title">Task 2</h1>
+			</header>
+			<div class="content" style="text-align:left; margin-top:50px">
+				<p class="content-padded">The task is due on 10 Dec</p>
+				<p class="content-padded">This tasks requires 7days to finish and I think I can do it pretty quickly</p>
+				<p class="content-padded">The penalty for this task is $3/day late</p>
+				<p class="content-padded">The task is completed on 05 Dec</p>
 </body>
 </html>
 
