@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+ var app = {
   // Application Constructor
   initialize: function() {
     this.bindEvents();
@@ -36,6 +36,7 @@ var app = {
   // function, we must explicity call 'app.receivedEvent(...);'
   onDeviceReady: function() {
     console.log("Reached onDeviceReady")
+    app.getOngoingTasks()
     app.receivedEvent('deviceready');
     client = new CookieJarClient()
     client.onReceivingCompletedTasks(console.log)
@@ -96,7 +97,42 @@ var app = {
   },
   onUserCanceled: function(result) {
     console.log(result);
+  },
+  getOngoingTasks: function(){
+    var hostname = "cookiejar-hackatron.herokuapp.com"
+    if(window.location.indexOf("ongoing") === -1){
+      return
+    }
+    $.ajax({
+      url: hostname + '/users/1/tasks?filter=ongoing',
+      method: 'get',
+      success: function(data){
+        for(thing in data){
+          app.printOngoingTasks(thing)
+        }
+      },
+      error: function(error){
+        alert(error)
+      }
+    });
+  },
+  printOngoingTasks = function(obj){
+    var due_date = new Date(obj["due"]).toString().slice(4, 10);
+    var mytable = document.getElementById("ongoing");
+    var newcontent = document.createElement('tr');
+    newcontent.innerHTML = '<td><a href="#' + obj["id"] + '"class="btn btn-block" style="background-color:inherit; margin:0px; font-size:13px">' + obj["name"] + '</a></td><td class="table-entries-column">' + due_date + '</td>';
+    while (newcontent.firstChild) {
+      mytable.appendChild(newcontent.firstChild);
+    }
+
+    var mydiv = document.getElementById("maindiv");
+    var newdiv = document.createElement('div');
+    newdiv.innerHTML =  '<div id="' + obj["id"] + '" class="modal"><header class="bar bar-nav" style="margin-top:50px"><a class="icon icon-close pull-right" href="#' + obj["id"] + '"></a><h1 class="title">' + obj["name"] + '</h1></header><div class="content" style="text-align:left; margin-top:50px"><p class="content-padded">The task is due on ' + due_date + '</p><p class="content-padded">' + obj['desc'] + '</p><p class="content-padded">The penalty for this task is ' + obj["penalty"] + '</p><p class="content-padded">The current penalty is ' + obj["current_penalty"] + '</p></div><div class="bar bar-standard bar-footer"><a class="icon icon-check pull-left"></a><a class="icon icon-trash pull-right"></a></div>'
+    while (newdiv.firstChild) {
+      mydiv.appendChild(newdiv.firstChild);
+    }
   }
+
 };
 
 app.initialize();
